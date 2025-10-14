@@ -1,23 +1,27 @@
 .hero h1 {
+
+  font-family: 'Indie Flower', cursive;
   margin-block-start: 0;
   margin-block-end: 0;
+  margin-bottom: 1.1in;
+  padding: 0.4em;
 }
 .hero {
   box-sizing: border-box;
   /* Full screen hero section */
   width: 100%;
   min-height: 100dvh;
-  background: #0033a0;
-  color: white;
+  background: #FFD3BA;
+  color: black;
   font-family: Futura;
   font-weight: bold;
   font-size: 30px;
   text-align: center;
 }
 .hero a {
-  color: white;
+  color: rgb(0, 0, 0);
   text-decoration: underline;
-  text-decoration-color: #c6093b;
+  text-decoration-color: #000000;
 }
 
 /* A little "activation" to demonstrate JS is working in the template */
@@ -25,7 +29,7 @@
   transition: background 0.5s;
 }
 .hero.active {
-  background: #c6093b;
+  background: #fefefe;
 }
 .hero.active a {
   color: white;
