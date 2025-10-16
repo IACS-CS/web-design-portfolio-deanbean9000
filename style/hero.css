@@ -1,9 +1,8 @@
 .hero h1 {
-
   font-family: 'Indie Flower', cursive;
   margin-block-start: 0;
   margin-block-end: 0;
-  margin-bottom: 1.1in;
+  margin-bottom: 0.8in;
   padding: 0.4em;
 }
 .hero {
@@ -20,10 +19,11 @@
 }
 .hero a {
   color: rgb(0, 0, 0);
+  font-size: 50px;
+  font-family: 'Indie Flower', cursive;
   text-decoration: underline;
   text-decoration-color: #000000;
 }
-
 /* A little "activation" to demonstrate JS is working in the template */
 .hero {
   transition: background 0.5s;
@@ -35,13 +35,11 @@
   color: white;
   text-decoration-color: #0033a0;
 }
-
 @media (max-width: 800px) {
   .hero {
     font-size: 45px;
   }
 }
-
 @media (min-width: 801px) {
   .hero {
     font-size: 75px;
