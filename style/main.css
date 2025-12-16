@@ -1,6 +1,9 @@
 /* There's some sample CSS here which you can use or nuke as you like */
 
+/* This style was added with help from Github Copilot
+to prevent normal scrolling - 12/16/25 */
 html {
+  overflow: hidden; /* Prevent scrolling */
   /* Make #id links scroll smoothly */
   scroll-behavior: smooth;
 }
@@ -42,4 +45,24 @@ main {
   border-color: #000000;
   border-width: 3px;
   text-align: center;
+}
+
+/* This style was added with help from Github Copilot
+to style the back-to-top button - 12/16/25 */
+#back-to-top {
+  position: fixed; /* Stay in place even when scrolling */
+  bottom: 20px; /* 20px from the bottom */
+  right: 20px; /* 20px from the right */
+  background: #523B32; /* Dark color to match your theme */
+  color: white;
+  border: 2px solid #000000;
+  border-radius: 5px;
+  padding: 10px 15px;
+  font-size: 14px;
+  cursor: pointer; /* Show it's clickable */
+  font-family: 'Indie Flower', cursive;
+}
+
+#back-to-top:hover {
+  background: #3a2a23; /* Darker on hover */
 }

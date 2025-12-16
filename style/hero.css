@@ -17,12 +17,16 @@
   font-size: 30px;
   text-align: center;
 }
+/* This style was modified with help from Github Copilot
+to make the Learn More button draggable - 12/16/25 */
 .hero a {
   color: rgb(0, 0, 0);
   font-size: 50px;
   font-family: 'Indie Flower', cursive;
   text-decoration: underline;
   text-decoration-color: #000000;
+  cursor: grab; /* Show that the button can be grabbed */
+  user-select: none; /* Prevent text selection while dragging */
 }
 /* A little "activation" to demonstrate JS is working in the template */
 .hero {
