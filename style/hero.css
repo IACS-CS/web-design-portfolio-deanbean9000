@@ -27,6 +27,33 @@ to make the Learn More button draggable - 12/16/25 */
   text-decoration-color: #000000;
   cursor: grab; /* Show that the button can be grabbed */
   user-select: none; /* Prevent text selection while dragging */
+  transition: transform 0.1s ease-out; /* Smooth movement when dragging */
+  display: inline-block; /* Needed for transform to work */
+  margin-top: -20px; /* Move the button up closer to the drag text */
+}
+
+/* This style was added with help from Github Copilot
+to style the drag container with arrow and text - 12/16/25 */
+.drag-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px; /* Space between arrow, button, and text */
+  cursor: grab;
+  transition: transform 0.1s ease-out;
+}
+
+.drag-arrow {
+  width: 40px; /* Small arrow size */
+  height: auto;
+  user-select: none;
+}
+
+.drag-text {
+  font-family: 'Indie Flower', cursive;
+  font-size: 20px;
+  color: black;
+  user-select: none;
 }
 /* A little "activation" to demonstrate JS is working in the template */
 .hero {
