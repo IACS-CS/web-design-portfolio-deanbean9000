@@ -14,19 +14,27 @@
     <!-- Demo content -->
     <section class="hero">
       <h1>Ryan Dean's Portfolio</h1>
-      <!-- This container was added with help from Github Copilot
-      to group the arrow, button, and drag text together - 12/16/25 -->
       <div class="drag-container">
         <img src="arrow.png" alt="Arrow pointing down" class="drag-arrow">
-        
+        <div class="drag-text">drag</div>
         <a href="#about-me">Learn More</a>
       </div>
     </section>
-    <!-- This button was added with help from Github Copilot
-    in response to the prompt "add a small button that resets my back to the hero page" - 12/16/25 -->
     <button id="back-to-top">↑ Back to Top</button>
     
     <main>
+      <div class="tabs-container">
+        <img src="tabs.png" alt="About Me Tab" class="tab" data-section="about-me">
+        <img src="tabs.png" alt="CYOA Tab" class="tab" data-section="cyoa">
+        <img src="tabs.png" alt="Business Card Tab" class="tab" data-section="bc">
+        <img src="tabs.png" alt="Zen Garden Tab" class="tab" data-section="zen">
+        <img src="tabs.png" alt="Interactive Design Tab" class="tab" data-section="interactivedesign">
+        <img src="tabs.png" alt="Sources Tab" class="tab" data-section="attribution">
+      </div>
+      
+      <div class="content-display" id="content-display">
+      </div>
+      
       <section class="info" id="about-me">
         <div class="about-me">
           <h2>About Me</h2>
@@ -39,12 +47,42 @@
         <h2>Choose-Your-Own Adventure Project</h2>
         <p>
          <a href="https://iacs-cs.github.io/choose-your-own-adventure-deanbean9000/">Here</a> is a link to my Choose-Your-Own Adventure project. It is a project where we create a choose your own adventure story, Each page has multiple options to click that dictate your adventure. Mine is about someone taking a path through the forest and trying to find their way out. 
+        </p>
+        
+        <!-- Code viewer added with help from Github Copilot - 12/18/25 -->
+        <div class="code-viewer">
+          <div class="code-tabs">
+            <button class="code-tab active" data-code="cyoa-html">HTML</button>
+            <button class="code-tab" data-code="cyoa-css">CSS</button>
+            <button class="code-tab" data-code="cyoa-js">JS</button>
+          </div>
+          
+          <div class="code-display-box">
+            <pre id="cyoa-html" class="code-block active"><code><!-- Paste your CYOA HTML code here --></code></pre>
+            <pre id="cyoa-css" class="code-block"><code>/* Paste your CYOA CSS code here */</code></pre>
+            <pre id="cyoa-js" class="code-block"><code>// Paste your CYOA JavaScript code here</code></pre>
+          </div>
+        </div>
       </section>
       <section id="bc">
         <h2>Business Card Project</h2>
         <p>
          <a href="https://iacs-cs.github.io/business-card-project-deanbean9000/ ">Here</a> is the link to my Business Card project. This was a projet where we used box models and flex blocks to create individual business cards for ourselves. 
         </p>
+        
+        <div class="code-viewer">
+          <div class="code-tabs">
+            <button class="code-tab active" data-code="bc-html">HTML</button>
+            <button class="code-tab" data-code="bc-css">CSS</button>
+            <button class="code-tab" data-code="bc-js">JS</button>
+          </div>
+          
+          <div class="code-display-box">
+            <pre id="bc-html" class="code-block active"><code><!-- Paste your Business Card HTML code here --></code></pre>
+            <pre id="bc-css" class="code-block"><code>/* Paste your Business Card CSS code here */</code></pre>
+            <pre id="bc-js" class="code-block"><code>// Paste your Business Card JavaScript code here</code></pre>
+          </div>
+        </div>
       </section>
 
       <section id="zen">
@@ -52,6 +90,20 @@
         <p>
         <a href="https://iacs-zen-garden.netlify.app/#deanbean9000">Here</a> is a link to the Zen Garden Project. In this project I had to only change the css file of this code to change the look of the webpage.
         </p>
+        
+        <div class="code-viewer">
+          <div class="code-tabs">
+            <button class="code-tab active" data-code="zen-html">HTML</button>
+            <button class="code-tab" data-code="zen-css">CSS</button>
+            <button class="code-tab" data-code="zen-js">JS</button>
+          </div>
+          
+          <div class="code-display-box">
+            <pre id="zen-html" class="code-block active"><code><!-- Paste your Zen Garden HTML code here --></code></pre>
+            <pre id="zen-css" class="code-block"><code>/* Paste your Zen Garden CSS code here */</code></pre>
+            <pre id="zen-js" class="code-block"><code>// Paste your Zen Garden JavaScript code here</code></pre>
+          </div>
+        </div>
       </section>
 
       <section id="interactivedesign">
@@ -59,20 +111,60 @@
         <p>
           <a href="https://iacs-cs.github.io/interactive-design-deanbean/">Here</a> is a link to the interactive design project.
         </p>
+        
+        <div class="code-viewer">
+          <div class="code-tabs">
+            <button class="code-tab active" data-code="id-html">HTML</button>
+            <button class="code-tab" data-code="id-css">CSS</button>
+            <button class="code-tab" data-code="id-js">JS</button>
+          </div>
+          
+          <div class="code-display-box">
+            <pre id="id-html" class="code-block active"><code><!-- Paste your Interactive Design HTML code here --></code></pre>
+            <pre id="id-css" class="code-block"><code>/* Paste your Interactive Design CSS code here */</code></pre>
+            <pre id="id-js" class="code-block"><code>// Paste your Interactive Design JavaScript code here</code></pre>
+          </div>
+        </div>
       </section>
 
       <section id="attribution">
         <h2>Sources &amp; Attribution</h2>
+        
+        <h3>AI Usage - GitHub Copilot</h3>
+        
+        
+        <h4>Hero Section &amp; Navigation (12/16/25)</h4>
+        <ul>
+          <li>Drag-to-scroll functionality: Made "Learn More" button draggable upward to scroll down the page</li>
+          <li>Drag motion requirements: Implemented logic requiring actual drag motion (not just click) with minimum 120px pull distance and 150px maximum</li>
+          <li>Visual feedback: Added button movement during drag with transform animations</li>
+          <li>Scroll prevention: Disabled normal scrolling (overflow: hidden) to force use of drag interaction</li>
+        </ul>
+        
+        <h4>Tab Navigation System (12/18/25)</h4>
+        <ul>
+         <li>Section linking: Each tab linked to specific portfolio sections (About Me, CYOA, Business Card, Zen Garden, Interactive Design, Sources)</li>
+          <li>Content display: Created fixed right-side panel (60% width) that shows section content when tab is pulled</li>
+          <li>Persistent display: Content stays visible until different tab is pulled</li>
+        </ul>
+        
+        <h4>Code Viewer Components (12/18/25)</h4>
+        <ul>
+          <li>Code display structure: Added HTML/CSS/JS tabs with code blocks for each project</li>
+          <li>Tab switching: Implemented JavaScript to switch between code languages</li>
+          <li>Styling: Created scrollable code display boxes (400px max height) with syntax-appropriate fonts</li>
+          <li>Integration: Code viewers work within tab pull-out content display system</li>
+        </ul>
+        
+        <h4>Styling &amp; Layout</h4>
+        <ul>
+          <li>Responsive design adjustments for hero and tab systems</li>
+          </ul>
+        
+        <h3>Other Resources</h3>
         <p>
-          Fix me... you can add a list of sources you used to create your
-          portfolio here. Be sure to acknowledge any images, fonts, or other
-          media you used that you did not create yourself.
-        </p>
-        <p>
-          In addition, remember if you use AI to help (including Copilot), you
-          must acknowledge it here with a description of how you used AI &mdash;
-          you can list tasks AI helped you with, and you should also include
-          notes <em>in your source code</em> describing any AI-generated code.
+          Fonts: Google Fonts - "Indie Flower" and "Englebert" font families<br>
+          Images: arrow.png and tabs.png (add source information if these came from external sources)
         </p>
       </section>
     </main>

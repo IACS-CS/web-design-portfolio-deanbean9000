@@ -17,23 +17,19 @@
   font-size: 30px;
   text-align: center;
 }
-/* This style was modified with help from Github Copilot
-to make the Learn More button draggable - 12/16/25 */
 .hero a {
   color: rgb(0, 0, 0);
   font-size: 50px;
   font-family: 'Indie Flower', cursive;
   text-decoration: underline;
   text-decoration-color: #000000;
-  cursor: grab; /* Show that the button can be grabbed */
-  user-select: none; /* Prevent text selection while dragging */
-  transition: transform 0.1s ease-out; /* Smooth movement when dragging */
-  display: inline-block; /* Needed for transform to work */
-  margin-top: -20px; /* Move the button up closer to the drag text */
+  cursor: grab;
+  user-select: none;
+  transition: transform 0.1s ease-out;
+  display: inline-block;
+  margin-top: -20px;
 }
 
-/* This style was added with help from Github Copilot
-to style the drag container with arrow and text - 12/16/25 */
 .drag-container {
   display: flex;
   flex-direction: column;

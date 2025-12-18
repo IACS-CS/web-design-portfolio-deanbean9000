@@ -1,7 +1,5 @@
 /* There's some sample CSS here which you can use or nuke as you like */
 
-/* This style was added with help from Github Copilot
-to prevent normal scrolling - 12/16/25 */
 html {
   overflow: hidden; /* Prevent scrolling */
   /* Make #id links scroll smoothly */
@@ -25,12 +23,23 @@ h2 {
   text-decoration: underline;
   text-decoration-color: #000000;
   margin-bottom: 8px;
+  display: none;
 }
+
+h3, h4 {
+  display: none;
+}
+
+ul, li {
+  display: none;
+}
+
 p {
   margin-top: 0;
   font-family: "Englebert", cursive;
   font-weight: 400;
   font-style: normal;
+  display: none;
 }
 
 main {
@@ -40,20 +49,15 @@ main {
   line-height: 1.8; /* choose a line spacing */
   font-size: 18px; /* choose a font size */
   margin: auto;
-  border-style: solid;
-  border-radius: 1px;
-  border-color: #000000;
-  border-width: 3px;
+  /* border removed - 12/18/25 */
   text-align: center;
 }
 
-/* This style was added with help from Github Copilot
-to style the back-to-top button - 12/16/25 */
 #back-to-top {
-  position: fixed; /* Stay in place even when scrolling */
-  bottom: 20px; /* 20px from the bottom */
-  right: 20px; /* 20px from the right */
-  background: #523B32; /* Dark color to match your theme */
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #523B32;
   color: white;
   border: 2px solid #000000;
   border-radius: 5px;
@@ -65,4 +69,172 @@ to style the back-to-top button - 12/16/25 */
 
 #back-to-top:hover {
   background: #3a2a23; /* Darker on hover */
+}
+
+.tabs-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  position: fixed; /* Keep on left side when scrolling */
+  left: 0;
+  top: 0;
+  height: 100vh; /* Full height of viewport */
+  width: 80px; /* Width for the tabs on the side */
+  padding: 20px 10px;
+  background: #FFD3BA;
+  box-sizing: border-box;
+  opacity: 0; /* Hidden by default */
+  transition: opacity 0.3s ease; /* Smooth fade in */
+}
+
+.tabs-container.visible {
+  opacity: 1; /* Show when visible class is added */
+}
+
+.tab {
+  width: 50px;
+  height: auto;
+  transform: rotate(-90deg);
+  cursor: grab;
+  user-select: none;
+  transition: transform 0.1s ease-out;
+}
+
+.content-display {
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 60%;
+  height: 100vh;
+  background: #FFD3BA;
+  padding: 40px;
+  box-sizing: border-box;
+  overflow-y: auto;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 100;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.content-display.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.content-display h2 {
+  display: block !important;
+  color: #523B32;
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.content-display h3 {
+  display: block !important;
+  color: #523B32;
+  font-size: 24px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.content-display h4 {
+  display: block !important;
+  color: #523B32;
+  font-size: 18px;
+  margin-top: 15px;
+  margin-bottom: 8px;
+}
+
+.content-display ul {
+  display: block !important;
+  text-align: left;
+  max-width: 600px;
+  margin: 10px auto;
+}
+
+.content-display li {
+  display: list-item !important;
+  margin-bottom: 8px;
+  line-height: 1.6;
+}
+
+.content-display p {
+  display: block !important;
+  font-family: "Englebert", cursive;
+  line-height: 1.8;
+  font-size: 18px;
+}
+
+.content-display a {
+  color: #523B32;
+  font-weight: bold;
+}
+
+.code-viewer {
+  margin: 20px 0;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;  display: none !important;
+}
+
+.content-display .code-viewer {  display: block !important; /* Override hidden display */
+}
+
+.code-tabs {
+  display: flex !important; /* Override hidden display */
+  gap: 5px;
+  margin-bottom: 10px;
+  justify-content: center;
+}
+
+.code-tab {
+  padding: 10px 20px;
+  background: #ddd;
+  border: none;
+  cursor: pointer;
+  font-family: 'Indie Flower', cursive;
+  font-size: 16px;
+  border-radius: 5px 5px 0 0;
+  transition: background 0.2s;
+}
+
+.code-tab:hover {
+  background: #ccc;
+}
+
+.code-tab.active {
+  background: #523B32;
+  color: white;
+}
+
+.code-display-box {
+  background: #f5f5f5;
+  border: 2px solid #523B32;
+  border-radius: 5px;
+  padding: 15px;
+  max-height: 400px;
+  overflow-y: auto;
+  display: block !important; /* Override hidden display */
+}
+
+.code-block {
+  display: none;
+  margin: 0;
+  font-family: 'Courier New', monospace;
+  font-size: 14px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+.code-block.active {
+  display: block !important; /* Override hidden display */
+}
+
+.code-block code {
+  display: block !important; /* Override hidden display */
 }
