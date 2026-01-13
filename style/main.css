@@ -1,4 +1,6 @@
-/* There's some sample CSS here which you can use or nuke as you like */
+/* This CSS was modified with help from Github Copilot 
+in response to the prompt "change the second page to fit the style of the hero" 
+to add code editor/web design themed styling - 1/13/26 */
 
 html {
   overflow: hidden; /* Prevent scrolling */
@@ -7,27 +9,30 @@ html {
 }
 
 body {
-  /* Change to something you like, but please do customize the font! */
-  font-family: Roboto, "Helvetica Neue", sans-serif;
-  line-height: 1.4;
+  /* Code editor theme */
+  font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+  line-height: 1.6;
   /* reset default margins */
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  /* Customize colors! */
-  background: #FFD3BA;
-  color: #333;
+  /* Dark code editor background */
+  background: #1e1e1e;
+  color: #d4d4d4;
 }
+
 h2 {
-  color: #523B32;
-  text-decoration: underline;
-  text-decoration-color: #000000;
-  margin-bottom: 8px;
+  color: #4ec9b0; /* Cyan like CSS selectors */
+  text-decoration: none;
+  border-bottom: 2px solid #569cd6;
+  margin-bottom: 16px;
   display: none;
+  text-shadow: 0 0 10px rgba(78, 201, 176, 0.3);
 }
 
 h3, h4 {
   display: none;
+  color: #ce9178; /* Orange accent */
 }
 
 ul, li {
@@ -36,20 +41,20 @@ ul, li {
 
 p {
   margin-top: 0;
-  font-family: "Englebert", cursive;
+  font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
   font-weight: 400;
   font-style: normal;
   display: none;
+  color: #d4d4d4;
 }
 
 main {
   /* Make sure our content can scroll the hero away */
   min-height: 100dvh;
-  max-width: 45em; /* choose a width for text */
-  line-height: 1.8; /* choose a line spacing */
-  font-size: 18px; /* choose a font size */
+  max-width: 45em;
+  line-height: 1.8;
+  font-size: 16px;
   margin: auto;
-  /* border removed - 12/18/25 */
   text-align: center;
 }
 
@@ -57,49 +62,84 @@ main {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  background: #523B32;
-  color: white;
-  border: 2px solid #000000;
-  border-radius: 5px;
+  background: linear-gradient(135deg, #264f78 0%, #1e3a5f 100%);
+  color: #d4d4d4;
+  border: 2px solid #569cd6;
+  border-radius: 4px;
   padding: 10px 15px;
   font-size: 14px;
-  cursor: pointer; /* Show it's clickable */
-  font-family: 'Indie Flower', cursive;
+  cursor: pointer;
+  font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(86, 156, 214, 0.3);
 }
 
 #back-to-top:hover {
-  background: #3a2a23; /* Darker on hover */
+  background: linear-gradient(135deg, #2d5a8a 0%, #244270 100%);
+  border-color: #4ec9b0;
+  box-shadow: 0 0 20px rgba(78, 201, 176, 0.5);
 }
+
+/* This CSS was modified with help from Github Copilot 
+in response to the prompt "move the text physically on top of the tab image" - 1/13/26 */
 
 .tabs-container {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: flex-start;
-  position: fixed; /* Keep on left side when scrolling */
+  position: fixed;
   left: 0;
   top: 0;
-  height: 100vh; /* Full height of viewport */
-  width: 80px; /* Width for the tabs on the side */
+  height: 100vh;
+  width: 80px;
   padding: 20px 10px;
-  background: #FFD3BA;
+  background: linear-gradient(180deg, #2d2d30 0%, #1e1e1e 50%, #2d2d30 100%);
+  border-right: 2px solid #569cd6;
   box-sizing: border-box;
-  opacity: 0; /* Hidden by default */
-  transition: opacity 0.3s ease; /* Smooth fade in */
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
 .tabs-container.visible {
-  opacity: 1; /* Show when visible class is added */
+  opacity: 1;
 }
 
-.tab {
-  width: 50px;
-  height: auto;
-  transform: rotate(-90deg);
+.tab-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
   cursor: grab;
   user-select: none;
   transition: transform 0.1s ease-out;
 }
+
+.tab-label {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+  font-size: 9px;
+  color: #4ec9b0;
+  font-weight: bold;
+  text-shadow: 0 0 8px rgba(78, 201, 176, 0.6);
+  white-space: normal;
+  text-align: center;
+  pointer-events: none;
+  z-index: 10;
+  line-height: 1.1;
+}
+
+.tab {
+  width: 55px;
+  height: auto;
+  transform: rotate(-90deg);
+  user-select: none;
+}
+
+/* This CSS was modified with help from Github Copilot 
+in response to the prompt "take the links from the projects and display the project in a box to the left of the content" - 1/13/26 */
 
 .content-display {
   position: fixed;
@@ -107,19 +147,17 @@ main {
   top: 0;
   width: 60%;
   height: 100vh;
-  background: #FFD3BA;
-  padding: 40px;
+  background: linear-gradient(135deg, #1e1e1e 0%, #252526 50%, #1e1e1e 100%);
+  border-left: 2px solid #569cd6;
+  padding: 20px;
   box-sizing: border-box;
   overflow-y: auto;
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.3s ease;
   z-index: 100;
-  text-align: center;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
 }
 
 .content-display.active {
@@ -127,24 +165,59 @@ main {
   pointer-events: auto;
 }
 
+.content-display section {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.project-preview {
+  flex: 0 0 45%;
+  min-height: 400px;
+  background: #000;
+  border: 2px solid #569cd6;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(86, 156, 214, 0.3);
+}
+
+.project-preview iframe {
+  width: 100%;
+  height: 100%;
+  min-height: 400px;
+  border: none;
+  display: block;
+}
+
+.project-content {
+  flex: 1;
+  text-align: left;
+}
+
 .content-display h2 {
   display: block !important;
-  color: #523B32;
+  color: #4ec9b0;
   font-size: 32px;
   margin-bottom: 20px;
+  text-shadow: 0 0 15px rgba(78, 201, 176, 0.5);
+  border-bottom: 2px solid #569cd6;
+  padding-bottom: 10px;
 }
 
 .content-display h3 {
   display: block !important;
-  color: #523B32;
+  color: #ce9178;
   font-size: 24px;
   margin-top: 20px;
   margin-bottom: 10px;
+  text-shadow: 0 0 10px rgba(206, 145, 120, 0.3);
 }
 
 .content-display h4 {
   display: block !important;
-  color: #523B32;
+  color: #569cd6;
   font-size: 18px;
   margin-top: 15px;
   margin-bottom: 8px;
@@ -161,80 +234,101 @@ main {
   display: list-item !important;
   margin-bottom: 8px;
   line-height: 1.6;
+  color: #d4d4d4;
 }
 
 .content-display p {
   display: block !important;
-  font-family: "Englebert", cursive;
+  font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
   line-height: 1.8;
-  font-size: 18px;
+  font-size: 16px;
+  color: #d4d4d4;
 }
 
 .content-display a {
-  color: #523B32;
+  color: #4ec9b0;
   font-weight: bold;
+  text-decoration: none;
+  border-bottom: 1px solid #4ec9b0;
+  transition: all 0.3s ease;
+}
+
+.content-display a:hover {
+  color: #569cd6;
+  border-bottom-color: #569cd6;
+  text-shadow: 0 0 10px rgba(86, 156, 214, 0.5);
 }
 
 .code-viewer {
   margin: 20px 0;
   max-width: 600px;
   margin-left: auto;
-  margin-right: auto;  display: none !important;
+  margin-right: auto;
+  display: none !important;
 }
 
-.content-display .code-viewer {  display: block !important; /* Override hidden display */
+.content-display .code-viewer {
+  display: block !important;
 }
 
 .code-tabs {
-  display: flex !important; /* Override hidden display */
+  display: flex !important;
   gap: 5px;
-  margin-bottom: 10px;
+  margin-bottom: 0;
   justify-content: center;
 }
 
 .code-tab {
   padding: 10px 20px;
-  background: #ddd;
-  border: none;
+  background: #2d2d30;
+  border: 1px solid #569cd6;
   cursor: pointer;
-  font-family: 'Indie Flower', cursive;
-  font-size: 16px;
-  border-radius: 5px 5px 0 0;
-  transition: background 0.2s;
+  font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+  font-size: 14px;
+  border-radius: 4px 4px 0 0;
+  transition: all 0.3s ease;
+  color: #d4d4d4;
 }
 
 .code-tab:hover {
-  background: #ccc;
+  background: #3e3e42;
+  box-shadow: 0 0 10px rgba(86, 156, 214, 0.3);
 }
 
 .code-tab.active {
-  background: #523B32;
-  color: white;
+  background: #264f78;
+  color: #4ec9b0;
+  border-color: #4ec9b0;
+  box-shadow: 0 0 15px rgba(78, 201, 176, 0.4);
 }
 
 .code-display-box {
-  background: #f5f5f5;
-  border: 2px solid #523B32;
-  border-radius: 5px;
+  background: #1e1e1e;
+  border: 2px solid #569cd6;
+  border-radius: 0 4px 4px 4px;
   padding: 15px;
   max-height: 400px;
   overflow-y: auto;
-  display: block !important; /* Override hidden display */
+  display: block !important;
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.5);
 }
 
 .code-block {
   display: none;
   margin: 0;
-  font-family: 'Courier New', monospace;
+  font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
   font-size: 14px;
   white-space: pre-wrap;
   word-wrap: break-word;
+  color: #d4d4d4;
+  text-align: left;
 }
 
 .code-block.active {
-  display: block !important; /* Override hidden display */
+  display: block !important;
 }
 
 .code-block code {
-  display: block !important; /* Override hidden display */
+  display: block !important;
+  color: #ce9178;
 }

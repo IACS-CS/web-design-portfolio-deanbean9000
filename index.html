@@ -11,25 +11,50 @@
     <link rel="stylesheet" href="style/hero.css" />
   </head>
   <body>
-    <!-- Demo content -->
+    <!-- This HTML was modified with help from Github Copilot 
+    in response to the prompt "change the text on the hero to make the hello, my name is ryan. to be the highest in the hierarchy" - 1/13/26 -->
     <section class="hero">
-      <h1>Ryan Dean's Portfolio</h1>
+      <h1>Hello, my name is Ryan.</h1>
+      <h2>This is my Web Design Portfolio displaying all of the coding projects from this class.</h2>
       <div class="drag-container">
         <img src="arrow.png" alt="Arrow pointing down" class="drag-arrow">
-        <div class="drag-text">drag</div>
-        <a href="#about-me">Learn More</a>
+        <p class="drag-instruction">Drag the arrow up to learn more</p>
       </div>
     </section>
     <button id="back-to-top">↑ Back to Top</button>
     
+    <!-- This HTML was modified with help from Github Copilot 
+    in response to the prompt "add the labels ontop of the tabs so they dont change visualy and the text pulls with the tab" - 1/13/26 -->
     <main>
       <div class="tabs-container">
-        <img src="tabs.png" alt="About Me Tab" class="tab" data-section="about-me">
-        <img src="tabs.png" alt="CYOA Tab" class="tab" data-section="cyoa">
-        <img src="tabs.png" alt="Business Card Tab" class="tab" data-section="bc">
-        <img src="tabs.png" alt="Zen Garden Tab" class="tab" data-section="zen">
-        <img src="tabs.png" alt="Interactive Design Tab" class="tab" data-section="interactivedesign">
-        <img src="tabs.png" alt="Sources Tab" class="tab" data-section="attribution">
+        <div class="tab-wrapper" data-section="about-me">
+          <span class="tab-label">About Me</span>
+          <img src="tabs.png" alt="About Me Tab" class="tab">
+        </div>
+        <div class="tab-wrapper" data-section="cyoa">
+          <span class="tab-label">CYOA</span>
+          <img src="tabs.png" alt="CYOA Tab" class="tab">
+        </div>
+        <div class="tab-wrapper" data-section="bc">
+          <span class="tab-label">Business<br>Card</span>
+          <img src="tabs.png" alt="Business Card Tab" class="tab">
+        </div>
+        <div class="tab-wrapper" data-section="zen">
+          <span class="tab-label">Zen Garden</span>
+          <img src="tabs.png" alt="Zen Garden Tab" class="tab">
+        </div>
+        <div class="tab-wrapper" data-section="interactivedesign">
+          <span class="tab-label">Interactive Design</span>
+          <img src="tabs.png" alt="Interactive Design Tab" class="tab">
+        </div>
+        <div class="tab-wrapper" data-section="designimprovement">
+          <span class="tab-label">Design Improvement</span>
+          <img src="tabs.png" alt="Design Improvement Tab" class="tab">
+        </div>
+        <div class="tab-wrapper" data-section="attribution">
+          <span class="tab-label">Sources</span>
+          <img src="tabs.png" alt="Sources Tab" class="tab">
+        </div>
       </div>
       
       <div class="content-display" id="content-display">
@@ -58,9 +83,412 @@
           </div>
           
           <div class="code-display-box">
-            <pre id="cyoa-html" class="code-block active"><code><!-- Paste your CYOA HTML code here --></code></pre>
-            <pre id="cyoa-css" class="code-block"><code>/* Paste your CYOA CSS code here */</code></pre>
-            <pre id="cyoa-js" class="code-block"><code>// Paste your CYOA JavaScript code here</code></pre>
+            <pre id="cyoa-html" class="code-block active"><code>&lt;!-- index.html - Main starting page --&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+ &lt;head&gt;
+   &lt;meta charset="utf-8" /&gt;
+   &lt;meta name="viewport" content="width=device-width, initial-scale=1" /&gt;
+   &lt;meta name="description" content="A simple choose your own adventure game." /&gt;
+   &lt;title&gt;A Walk in the Forest&lt;/title&gt;
+   &lt;link rel="stylesheet" type="text/css" href="styles.css" /&gt;
+   &lt;base href="./" /&gt;
+ &lt;/head&gt;
+ &lt;body&gt;
+   &lt;h1&gt;A Walk in the Forest&lt;/h1&gt;
+   &lt;p&gt;This is the beginning.&lt;/p&gt;
+   &lt;p&gt;You have just entered the forest and have gotten to a fork in the path.&lt;/p&gt;
+   &lt;ul&gt;
+     &lt;li&gt;&lt;a href="leftpath.html"&gt;Left Path&lt;/a&gt;&lt;/li&gt;
+     &lt;li&gt;&lt;a href="rightpath.html"&gt;Right Path&lt;/a&gt;&lt;/li&gt;
+   &lt;/ul&gt;
+   &lt;hr /&gt;
+   &lt;small&gt;&lt;a href="citations.html"&gt;Citations&lt;/a&gt;&lt;/small&gt;
+ &lt;/body&gt;
+&lt;/html&gt;
+
+&lt;!-- Continue.html - Step 2 Right Path --&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+ &lt;head&gt;
+   &lt;meta charset="utf-8" /&gt;
+   &lt;meta name="viewport" content="width=device-width, initial-scale=1" /&gt;
+   &lt;meta name="description" content="A simple choose your own adventure game." /&gt;
+   &lt;title&gt;Continue&lt;/title&gt;
+   &lt;link rel="stylesheet" type="text/css" href="../styles.css" /&gt;
+   &lt;base href="./" /&gt;
+ &lt;/head&gt;
+ &lt;body class="continue-bg"&gt;
+   &lt;h1&gt;There is a tree blocking your path&lt;/h1&gt;
+   &lt;p&gt;You can try to climb over it or go around it.&lt;/p&gt;
+   &lt;ul&gt;
+     &lt;li&gt;&lt;a href="../step 3 right path/Climbover.html"&gt;Climb Over&lt;/a&gt;&lt;/li&gt;
+     &lt;li&gt;&lt;a href="../step 3 right path/Go around.html"&gt;Go Around&lt;/a&gt;&lt;/li&gt;
+   &lt;/ul&gt;
+   &lt;hr /&gt;
+   &lt;small&gt;&lt;a href="citations.html"&gt;Citations&lt;/a&gt;&lt;/small&gt;
+ &lt;/body&gt;
+&lt;/html&gt;
+
+&lt;!-- Rest up.html - Step 1 Left Path --&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+ &lt;head&gt;
+   &lt;meta charset="utf-8" /&gt;
+   &lt;meta name="viewport" content="width=device-width, initial-scale=1" /&gt;
+   &lt;meta name="description" content="A simple choose your own adventure game." /&gt;
+   &lt;title&gt;Rest up&lt;/title&gt;
+   &lt;link rel="stylesheet" type="text/css" href="../styles.css" /&gt;
+   &lt;base href="./" /&gt;
+ &lt;/head&gt;
+ &lt;body class="rest-bg"&gt;
+   &lt;h1&gt;Rest Up&lt;/h1&gt;
+   &lt;p&gt;You find a comfortable spot under a tree and decide to rest for a while. 
+   After a short nap, you feel refreshed and ready to 
+   &lt;a href="../step 2 right path/Continue.html"&gt;continue your adventure&lt;/a&gt;.&lt;/p&gt;
+   &lt;hr /&gt;
+   &lt;small&gt;&lt;a href="citations.html"&gt;Citations&lt;/a&gt;&lt;/small&gt;
+ &lt;/body&gt;
+&lt;/html&gt;
+
+&lt;!-- Climbover.html - Step 3 Right Path (GAME OVER) --&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+ &lt;head&gt;
+   &lt;meta charset="utf-8" /&gt;
+   &lt;meta name="viewport" content="width=device-width, initial-scale=1" /&gt;
+   &lt;meta name="description" content="A simple choose your own adventure game." /&gt;
+   &lt;title&gt;Climbover&lt;/title&gt;
+   &lt;link rel="stylesheet" type="text/css" href="../styles.css" /&gt;
+   &lt;base href="./" /&gt;
+ &lt;/head&gt;
+ &lt;body class="climbover-bg"&gt;
+   &lt;h1&gt;You Try to Climb Over&lt;/h1&gt;
+   &lt;p&gt;Bad for you though it rained and the tree was slippery, you fall off and perish.&lt;/p&gt;
+   &lt;p&gt;Game Over. You can restart the game by going back to the 
+   &lt;a href="../index.html"&gt;beginning&lt;/a&gt;.&lt;/p&gt;
+   &lt;hr /&gt;
+   &lt;small&gt;&lt;a href="citations.html"&gt;Citations&lt;/a&gt;&lt;/small&gt;
+ &lt;/body&gt;
+&lt;/html&gt;
+
+&lt;!-- Go around.html - Step 3 Right Path --&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+ &lt;head&gt;
+   &lt;meta charset="utf-8" /&gt;
+   &lt;meta name="viewport" content="width=device-width, initial-scale=1" /&gt;
+   &lt;meta name="description" content="A simple choose your own adventure game." /&gt;
+   &lt;title&gt;Go Around&lt;/title&gt;
+   &lt;link rel="stylesheet" type="text/css" href="../styles.css" /&gt;
+   &lt;base href="./" /&gt;
+ &lt;/head&gt;
+ &lt;body class="goaround-bg"&gt;
+   &lt;h1&gt;You Walk Around&lt;/h1&gt;
+   &lt;p&gt;Unlike the guy before you, you realize the tree is slippery and decide to go 
+   around it. You walk for a few minutes before coming across a cave, do you want to go 
+   inside the &lt;a href="../step 4 right path/Cave.html"&gt;Cave&lt;/a&gt; or do you want to 
+   &lt;a href="../step 4 right path/continue2.html"&gt;continue on&lt;/a&gt;?&lt;/p&gt;
+   &lt;hr /&gt;
+   &lt;small&gt;&lt;a href="citations.html"&gt;Citations&lt;/a&gt;&lt;/small&gt;
+ &lt;/body&gt;
+&lt;/html&gt;
+
+&lt;!-- Cave.html - Step 4 Right Path --&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+ &lt;head&gt;
+   &lt;meta charset="utf-8" /&gt;
+   &lt;meta name="viewport" content="width=device-width, initial-scale=1" /&gt;
+   &lt;meta name="description" content="A simple choose your own adventure game." /&gt;
+   &lt;title&gt;Cave&lt;/title&gt;
+   &lt;link rel="stylesheet" type="text/css" href="../styles.css" /&gt;
+   &lt;base href="./" /&gt;
+ &lt;/head&gt;
+ &lt;body class="cave-bg"&gt;
+   &lt;h1&gt;You Walk into the Cave&lt;/h1&gt;
+   &lt;p&gt;You walk into the cave and encounter another fork in the path, On the right you 
+   see a bright light coming from deep inside the cave, On the left it is pitch black, 
+   do you want to go to the 
+   &lt;a href="../step 6 right path cave/rightpathcaveman.html"&gt;bright light&lt;/a&gt; or do you 
+   want to go to the &lt;a href="../step 6 right path cave/leftpath2.html"&gt;pitch black&lt;/a&gt;?&lt;/p&gt;
+   &lt;hr /&gt;
+   &lt;small&gt;&lt;a href="citations.html"&gt;Citations&lt;/a&gt;&lt;/small&gt;
+ &lt;/body&gt;
+&lt;/html&gt;
+
+&lt;!-- continue2.html - Step 4 Right Path (Skip Cave) --&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+ &lt;head&gt;
+   &lt;meta charset="utf-8" /&gt;
+   &lt;meta name="viewport" content="width=device-width, initial-scale=1" /&gt;
+   &lt;meta name="description" content="A simple choose your own adventure game." /&gt;
+   &lt;title&gt;Continue2&lt;/title&gt;
+   &lt;link rel="stylesheet" type="text/css" href="../styles.css" /&gt;
+   &lt;base href="./" /&gt;
+ &lt;/head&gt;
+ &lt;body class="continue2-bg"&gt;
+   &lt;h1&gt;You skip the cave&lt;/h1&gt;
+   &lt;p&gt;You decide to skip the cave because you realize you aren't built for all that, 
+   unlucky you though a bear has been watching you the whole time, The bear is very angry 
+   at you for no reason and it is now charging at you, do you want to 
+   &lt;a href="../step 5 right path the bear/fightthebear.html"&gt;fight the bear&lt;/a&gt; or do 
+   you want to &lt;a href="../step 5 right path the bear/run.html"&gt;run away&lt;/a&gt;?&lt;/p&gt;
+   &lt;hr /&gt;
+   &lt;small&gt;&lt;a href="citations.html"&gt;Citations&lt;/a&gt;&lt;/small&gt;
+ &lt;/body&gt;
+&lt;/html&gt;
+
+&lt;!-- fightthebear.html - Step 5 Right Path (GAME OVER) --&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+ &lt;head&gt;
+   &lt;meta charset="utf-8" /&gt;
+   &lt;meta name="viewport" content="width=device-width, initial-scale=1" /&gt;
+   &lt;meta name="description" content="A simple choose your own adventure game." /&gt;
+   &lt;title&gt;Fight the Bear&lt;/title&gt;
+   &lt;link rel="stylesheet" type="text/css" href="../styles.css" /&gt;
+   &lt;base href="./" /&gt;
+ &lt;/head&gt;
+ &lt;body class="fightthebear-bg"&gt;
+   &lt;h1&gt;You raise your hands to fight&lt;/h1&gt;
+   &lt;p&gt;Smart enough to not go on the tree but not smart enough to run from the bear.. 
+   It mauls you and you perish.&lt;/p&gt;
+   &lt;p&gt;Game Over. You can restart the game by going back to the 
+   &lt;a href="../index.html"&gt;beginning&lt;/a&gt;.&lt;/p&gt;
+   &lt;hr /&gt;
+   &lt;small&gt;&lt;a href="citations.html"&gt;Citations&lt;/a&gt;&lt;/small&gt;
+ &lt;/body&gt;
+&lt;/html&gt;
+
+&lt;!-- run.html - Step 5 Right Path (GAME OVER) --&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+ &lt;head&gt;
+   &lt;meta charset="utf-8" /&gt;
+   &lt;meta name="viewport" content="width=device-width, initial-scale=1" /&gt;
+   &lt;meta name="description" content="A simple choose your own adventure game." /&gt;
+   &lt;title&gt;Run&lt;/title&gt;
+   &lt;link rel="stylesheet" type="text/css" href="../styles.css" /&gt;
+   &lt;base href="./" /&gt;
+ &lt;/head&gt;
+ &lt;body class="run-bg"&gt;
+   &lt;h1&gt;You decide to turn around a run away&lt;/h1&gt;
+   &lt;p&gt;You run as fast as you can away from the bear, but its a bear and it catches 
+   you and makes you into dinner, you perish.&lt;/p&gt;
+   &lt;p&gt;Game Over. You can restart the game by going back to the 
+   &lt;a href="../index.html"&gt;beginning&lt;/a&gt;.&lt;/p&gt;
+   &lt;hr /&gt;
+   &lt;small&gt;&lt;a href="citations.html"&gt;Citations&lt;/a&gt;&lt;/small&gt;
+ &lt;/body&gt;
+&lt;/html&gt;
+
+&lt;!-- leftpath2.html - Step 6 Right Path Cave --&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+ &lt;head&gt;
+   &lt;meta charset="utf-8" /&gt;
+   &lt;meta name="viewport" content="width=device-width, initial-scale=1" /&gt;
+   &lt;meta name="description" content="A simple choose your own adventure game." /&gt;
+   &lt;title&gt;leftpath2&lt;/title&gt;
+   &lt;link rel="stylesheet" type="text/css" href="../styles.css" /&gt;
+   &lt;base href="./" /&gt;
+ &lt;/head&gt;
+ &lt;body class="leftpath2-bg"&gt;
+   &lt;h1&gt;You Walk into the darkness&lt;/h1&gt;
+   &lt;p&gt;After walking for about 6 or 7 minutes you see a light at the end of the cave. 
+   You think about it for a minute and decide if you should return to the 
+   &lt;a href="../step 6 right path cave/rightpathcaveman.html"&gt;Right Path&lt;/a&gt; or continue 
+   towards the &lt;a href="../step 7 right path final/final.html"&gt;Light&lt;/a&gt;.&lt;/p&gt;
+   &lt;hr /&gt;
+   &lt;small&gt;&lt;a href="citations.html"&gt;Citations&lt;/a&gt;&lt;/small&gt;
+ &lt;/body&gt;
+&lt;/html&gt;
+
+&lt;!-- rightpathcaveman.html - Step 6 Right Path Cave (GAME OVER) --&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+ &lt;head&gt;
+   &lt;meta charset="utf-8" /&gt;
+   &lt;meta name="viewport" content="width=device-width, initial-scale=1" /&gt;
+   &lt;meta name="description" content="A simple choose your own adventure game." /&gt;
+   &lt;title&gt;rightpathcaveman&lt;/title&gt;
+   &lt;link rel="stylesheet" type="text/css" href="../styles.css" /&gt;
+   &lt;base href="./" /&gt;
+ &lt;/head&gt;
+ &lt;body class="rightpathcaveman-bg"&gt;
+   &lt;h1&gt;You walk towards the light&lt;/h1&gt;
+   &lt;img src="../images/caveman-159964_1280.png" alt="Caveman" 
+        style="display: block; margin: 0 auto 1em auto; max-width: 80%; height: 200px;" /&gt;
+   &lt;p&gt;You enter a small room with a fire in the middle, it looks like a campfire but 
+   theres a weird shadow on the wall. There is a caveman who is hiding on the ceiling, 
+   he drops on you like a bear and you perish.&lt;/p&gt;
+   &lt;p&gt;Game Over. You can restart the game by going back to the 
+   &lt;a href="../index.html"&gt;beginning&lt;/a&gt;.&lt;/p&gt;
+   &lt;hr /&gt;
+   &lt;small&gt;&lt;a href="citations.html"&gt;Citations&lt;/a&gt;&lt;/small&gt;
+   &lt;audio controls autoplay loop style="position:fixed; bottom:10px; left:50%; 
+          transform:translateX(-50%); z-index:100;"&gt;
+     &lt;source src="../audio/inside-a-cave-effect-240264.mp3" type="audio/mpeg"&gt;
+   &lt;/audio&gt;
+ &lt;/body&gt;
+&lt;/html&gt;
+
+&lt;!-- final.html - Step 7 Right Path Final (WINNING ENDING!) --&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+ &lt;head&gt;
+   &lt;meta charset="utf-8" /&gt;
+   &lt;meta name="viewport" content="width=device-width, initial-scale=1" /&gt;
+   &lt;meta name="description" content="A simple choose your own adventure game." /&gt;
+   &lt;title&gt;Final&lt;/title&gt;
+   &lt;link rel="stylesheet" type="text/css" href="../styles.css" /&gt;
+   &lt;base href="./" /&gt;
+ &lt;/head&gt;
+ &lt;body class="final-bg"&gt;
+   &lt;div class="text-bg"&gt;
+     &lt;h1&gt;For some reason you keep walking&lt;/h1&gt;
+     &lt;p&gt;While walking you wonder why there is a cave in the middle of a forest but you 
+     continue to the light, you come out of the cave and realize you are back at the 
+     start of the path, you go home and live happily ever after.&lt;/p&gt;
+     &lt;p&gt;Game Over. You can restart the game by going back to the 
+     &lt;a href="../index.html"&gt;beginning&lt;/a&gt;.&lt;/p&gt;
+     &lt;h2&gt;Your Path&lt;/h2&gt;
+     &lt;table border="1"&gt;
+       &lt;tr&gt;&lt;th&gt;Step&lt;/th&gt;&lt;th&gt;Choice&lt;/th&gt;&lt;/tr&gt;
+       &lt;tr&gt;&lt;td&gt;1&lt;/td&gt;&lt;td&gt;Right Path&lt;/td&gt;&lt;/tr&gt;
+       &lt;tr&gt;&lt;td&gt;2&lt;/td&gt;&lt;td&gt;Continue&lt;/td&gt;&lt;/tr&gt;
+       &lt;tr&gt;&lt;td&gt;3&lt;/td&gt;&lt;td&gt;Go around&lt;/td&gt;&lt;/tr&gt;
+       &lt;tr&gt;&lt;td&gt;4&lt;/td&gt;&lt;td&gt;Enter Cave&lt;/td&gt;&lt;/tr&gt;
+       &lt;tr&gt;&lt;td&gt;5&lt;/td&gt;&lt;td&gt;Pitch black&lt;/td&gt;&lt;/tr&gt;
+       &lt;tr&gt;&lt;td&gt;6&lt;/td&gt;&lt;td&gt;The light&lt;/td&gt;&lt;/tr&gt;
+     &lt;/table&gt;
+     &lt;hr /&gt;
+     &lt;small&gt;&lt;a href="citations.html"&gt;Citations&lt;/a&gt;&lt;/small&gt;
+   &lt;/div&gt;
+ &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            <pre id="cyoa-css" class="code-block"><code>/* styles.css for CYOA Project */
+
+body {
+  min-height: 100vh;                /* Make body at least full viewport height */
+  width: 550px;
+  margin-left: auto;
+  margin-right: auto;
+  color: #fff;                      /* White font color for visibility */
+  background-color: #222;           /* Dark background for contrast */
+  background-image: url("./images/pexels-pixabay-33109.jpg");
+  background-size: cover;            /* Cover the whole viewport */
+  background-position: center top;   /* Start image at top center */
+  background-repeat: no-repeat;
+  padding: 1em;
+}
+
+p {
+  font-size: 12pt;
+  font-family: cursive;
+}
+
+h1 {
+  font-size: 48pt;
+  font-weight: bold;
+  color: rgb(255, 255, 255);
+}
+
+a {
+  color: #52ffee;                   /* Cyan link color */
+}
+
+a:hover {
+  color: #ffeb3b;                   /* Yellow on hover */
+}
+
+/* Background images for different pages */
+.left-path {
+  background-image: url("./images/pexels-nejc-kosir-108379-338936.jpg");
+}
+
+.rightpath-bg {
+  background-image: url("./images/name.jpg");
+}
+
+.continue-bg {
+  background-image: url("./images/continue.jpg");
+}
+
+.rest-bg {
+  background-image: url("./images/bigtree.jpg");
+}
+
+.climbover-bg {
+  background-image: url("./images/climbover.jpg");
+}
+
+.goaround-bg {
+  background-image: url("./images/goaround.jpg");
+  background-size: cover;           /* Ensures the image covers the whole background */
+  background-position: center;      /* Centers the image */
+  background-repeat: no-repeat;     /* Prevents tiling */
+}
+
+.cave-bg {  
+  background-image: url("./images/cave.jpg");
+}
+
+.continue2-bg {
+  background-image: url("./images/continue2.jpg");
+}
+
+.fightthebear-bg {
+  background-image: url("./images/fightthebear.jpg");
+}
+
+.run-bg {
+  background-image: url("./images/run.jpg");
+}
+
+.leftpath2-bg {
+  background-image: url("./images/leftpath2.jpg");
+}
+
+.rightpathcaveman-bg {
+  background-image: url("./images/rightpathcaveman.jpg"); 
+}
+
+.final-bg {
+  background-image: url("./images/final.jpg");
+  color: #ffffff;                   /* White text for the final page */
+}
+
+/* Apply common background properties to all page classes */
+body,
+.left-path,
+.rightpath-bg,
+.continue-bg,
+.rest-bg,
+.climbover-bg,
+.goaround-bg,
+.cave-bg,
+.continue2-bg,
+.fightthebear-bg,
+.run-bg,
+.leftpath2-bg,
+.rightpathcaveman-bg,
+.final-bg {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Semi-transparent background for text readability */
+.text-bg {
+  background: rgba(30, 30, 30, 0.85); /* Semi-transparent dark background */
+  padding: 2em;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.3);
+}</code></pre>
+            <pre id="cyoa-js" class="code-block"><code>// N/A</code></pre>
           </div>
         </div>
       </section>
@@ -123,6 +551,27 @@
             <pre id="id-html" class="code-block active"><code><!-- Paste your Interactive Design HTML code here --></code></pre>
             <pre id="id-css" class="code-block"><code>/* Paste your Interactive Design CSS code here */</code></pre>
             <pre id="id-js" class="code-block"><code>// Paste your Interactive Design JavaScript code here</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <section id="designimprovement">
+        <h2>Design Improvement Project</h2>
+        <p>
+          In this projet I had to take an existing webpage and improve the design of it using the principles learned in web design, I chose to take the lost and found slide from my schools morning announcements and redesign it for better usability and visual appeal.
+        </p>
+        
+        <div class="code-viewer">
+          <div class="code-tabs">
+            <button class="code-tab active" data-code="di-html">HTML</button>
+            <button class="code-tab" data-code="di-css">CSS</button>
+            <button class="code-tab" data-code="di-js">JS</button>
+          </div>
+          
+          <div class="code-display-box">
+            <pre id="di-html" class="code-block active"><code><!-- Paste your Design Improvement HTML code here --></code></pre>
+            <pre id="di-css" class="code-block"><code>/* Paste your Design Improvement CSS code here */</code></pre>
+            <pre id="di-js" class="code-block"><code>// Paste your Design Improvement JavaScript code here</code></pre>
           </div>
         </div>
       </section>

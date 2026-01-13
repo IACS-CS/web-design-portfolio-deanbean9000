@@ -1,66 +1,220 @@
-.hero h1 {
-  font-family: 'Indie Flower', cursive;
-  margin-block-start: 0;
-  margin-block-end: 0;
-  margin-bottom: 0.8in;
-  padding: 0.4em;
-}
+/* This CSS was modified with help from Github Copilot 
+in response to the prompt "make my hero related to web design, this is my web design portfolio and i want it to reflect coding / design" 
+to add code editor/web design themed styling - 1/13/26 */
+
 .hero {
   box-sizing: border-box;
   /* Full screen hero section */
   width: 100%;
   min-height: 100dvh;
-  background: #FFD3BA;
-  color: black;
-  font-family: Futura;
-  font-weight: bold;
+  /* Dark code editor background with accent colors */
+  background: linear-gradient(135deg, #1e1e1e 0%, #2d2d30 50%, #1e1e1e 100%);
+  color: #d4d4d4; /* VS Code text color */
+  font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+  font-weight: normal;
   font-size: 30px;
   text-align: center;
+  /* Use flexbox to center content vertically and horizontally */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  transition: background 0.5s;
+  position: relative;
 }
+
+/* Add subtle grid pattern like design software */
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    linear-gradient(rgba(100, 100, 100, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(100, 100, 100, 0.1) 1px, transparent 1px);
+  background-size: 50px 50px;
+  pointer-events: none;
+  opacity: 0.3;
+}
+
+.hero h1 {
+  font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-bottom: 2rem;
+  padding: 0.5em 0.8em;
+  font-size: 2.5rem;
+  /* Code syntax highlighting colors */
+  color: #4ec9b0; /* Cyan like CSS selectors */
+  /* Add text shadow with code editor glow */
+  text-shadow: 
+    0 0 10px rgba(78, 201, 176, 0.5),
+    2px 2px 4px rgba(0, 0, 0, 0.8);
+  /* Add letter spacing */
+  letter-spacing: 0.05em;
+  /* Subtle animation */
+  animation: fadeInDown 1s ease-out;
+  /* Add border like code block */
+  border: 2px solid #569cd6; /* Blue like HTML tags */
+  border-left: 4px solid #ce9178; /* Orange accent like strings */
+  background: rgba(30, 30, 30, 0.8);
+  border-radius: 4px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Fade in animation for heading */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero h2 {
+  display: block !important; /* Override global display: none */
+  font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-bottom: 2rem;
+  padding: 0.4em 0.6em;
+  font-size: 1.2rem;
+  font-weight: normal;
+  /* Orange accent like strings */
+  color: #ce9178;
+  text-shadow: 
+    0 0 10px rgba(206, 145, 120, 0.4),
+    2px 2px 4px rgba(0, 0, 0, 0.8);
+  letter-spacing: 0.03em;
+  animation: fadeInDown 1.2s ease-out;
+  border: 1px solid #569cd6;
+  background: rgba(30, 30, 30, 0.6);
+  border-radius: 4px;
+  position: relative;
+  z-index: 1;
+}
+
+.drag-instruction {
+  display: block !important; /* Override global display: none */
+  font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+  font-size: 0.9rem;
+  color: #569cd6;
+  text-shadow: 0 0 10px rgba(86, 156, 214, 0.5);
+  margin-top: 10px;
+  letter-spacing: 0.05em;
+  font-style: italic;
+}
+
 .hero a {
-  color: rgb(0, 0, 0);
-  font-size: 50px;
-  font-family: 'Indie Flower', cursive;
-  text-decoration: underline;
-  text-decoration-color: #000000;
+  color: #d4d4d4; /* Light text */
+  font-size: 1.8rem;
+  font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+  text-decoration: none;
   cursor: grab;
   user-select: none;
-  transition: transform 0.1s ease-out;
+  transition: all 0.3s ease;
   display: inline-block;
-  margin-top: -20px;
+  margin-top: 0.5rem;
+  /* Terminal/button styling */
+  text-shadow: 0 0 10px rgba(86, 156, 214, 0.5);
+  padding: 0.5rem 1.2rem;
+  border-radius: 4px;
+  /* Button with code accent colors */
+  background: linear-gradient(135deg, #264f78 0%, #1e3a5f 100%);
+  border: 2px solid #569cd6;
+  position: relative;
+  z-index: 1;
+}
+
+/* Add >> prompt symbol before link */
+.hero a::before {
+  content: '>> ';
+  color: #4ec9b0;
+}
+
+/* Polished hover effect - like hovering over code */
+.hero a:hover {
+  transform: scale(1.05);
+  background: linear-gradient(135deg, #2d5a8a 0%, #244270 100%);
+  border-color: #4ec9b0;
+  box-shadow: 0 0 20px rgba(78, 201, 176, 0.4);
+}
+
+/* Active/pressed state */
+.hero a:active {
+  transform: scale(0.98);
 }
 
 .drag-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 10px; /* Space between arrow, button, and text */
+  gap: 10px;
   cursor: grab;
   transition: transform 0.1s ease-out;
+  /* Fade in animation */
+  animation: fadeIn 1.5s ease-out;
+  position: relative;
+  z-index: 1;
+}
+
+/* Fade in animation for drag container */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .drag-arrow {
-  width: 40px; /* Small arrow size */
+  margin-top: 150px;
+  width: 40px;
   height: auto;
   user-select: none;
+  /* Add glow effect like code highlighting */
+  filter: drop-shadow(0 0 8px rgba(78, 201, 176, 0.6));
+  /* Bounce animation */
+  animation: bounce 2s ease-in-out infinite;
+}
+
+/* Bouncing animation for arrow */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(10px);
+  }
 }
 
 .drag-text {
-  font-family: 'Indie Flower', cursive;
+  font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
   font-size: 20px;
-  color: black;
+  color: #ce9178; /* Orange like string literals */
   user-select: none;
+  letter-spacing: 0.1em;
+  text-shadow: 0 0 10px rgba(206, 145, 120, 0.5);
 }
 /* A little "activation" to demonstrate JS is working in the template */
-.hero {
-  transition: background 0.5s;
-}
 .hero.active {
-  background: #fefefe;
+  background: linear-gradient(135deg, #252526 0%, #1e1e1e 50%, #2d2d30 100%);
 }
 .hero.active a {
-  color: white;
-  text-decoration-color: #0033a0;
+  color: #4ec9b0;
+  border-color: #4ec9b0;
+}
+.hero.active h1 {
+  color: #569cd6;
+  border-color: #4ec9b0;
 }
 @media (max-width: 800px) {
   .hero {

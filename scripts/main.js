@@ -1,14 +1,10 @@
+/* This JavaScript was modified with help from Github Copilot 
+in response to the prompt "fix the js so it scrolls when the arrow is pulled up like how it was before" - 1/13/26 */
+
 console.log("main.js loaded successfully!");
 
-// Get the Learn More button and the drag container
-const learnMoreButton = document.querySelector('.hero a');
+// Get the drag container (now just the arrow)
 const dragContainer = document.querySelector('.drag-container');
-
-// Block any click events on the link - we only want dragging to work
-learnMoreButton.addEventListener('click', function(event) {
-  event.preventDefault(); // Stop the link from working
-  console.log('Click blocked - you need to drag!');
-});
 
 // Variables to track the drag
 let isDragging = false; // Is the user currently dragging?
@@ -18,7 +14,7 @@ let draggedFarEnough = false; // Did they drag far enough?
 
 // When the user clicks on the drag container, start tracking the drag
 dragContainer.addEventListener('mousedown', function(event) {
-  event.preventDefault(); // Stop the link from working so we can drag instead
+  event.preventDefault(); // Stop default behavior so we can drag instead
   isDragging = true; // We are now dragging
   startY = event.clientY; // Remember where the mouse was when we started
   hasDragged = false; // Reset - we haven't scrolled yet
@@ -92,33 +88,36 @@ window.addEventListener('scroll', function() {
   }
 });
 
-// Get all the tab images and content display
-const tabs = document.querySelectorAll('.tab');
+/* This JavaScript was modified with help from Github Copilot 
+in response to the prompt "add the labels ontop of the tabs so they dont change visualy and the text pulls with the tab" - 1/13/26 */
+
+// Get all the tab wrappers and content display
+const tabs = document.querySelectorAll('.tab-wrapper');
 const contentDisplay = document.querySelector('#content-display');
 
 // Track which tab is being dragged
 let isDraggingTab = false;
-let currentTab = null;
+let currentTabWrapper = null;
 let tabStartX = 0;
 let currentSection = null;
 let activeSection = null; // Track which section is currently displayed
 
-// For each tab, add drag functionality
-tabs.forEach(function(tab) {
-  // When mousedown on a tab, start tracking
-  tab.addEventListener('mousedown', function(event) {
+// For each tab wrapper, add drag functionality
+tabs.forEach(function(tabWrapper) {
+  // When mousedown on a tab wrapper, start tracking
+  tabWrapper.addEventListener('mousedown', function(event) {
     event.preventDefault(); // Prevent default behavior
     isDraggingTab = true; // We're dragging a tab
-    currentTab = tab; // Remember which tab
-    currentSection = tab.getAttribute('data-section'); // Get the linked section
+    currentTabWrapper = tabWrapper; // Remember which tab wrapper
+    currentSection = tabWrapper.getAttribute('data-section'); // Get the linked section
     tabStartX = event.clientX; // Remember where the drag started
-    tab.style.cursor = 'grabbing'; // Show we're dragging
+    tabWrapper.style.cursor = 'grabbing'; // Show we're dragging
   });
 });
 
-// When the mouse moves, drag the tab
+// When the mouse moves, drag the tab wrapper (label + tab together)
 document.addEventListener('mousemove', function(event) {
-  if (isDraggingTab && currentTab) {
+  if (isDraggingTab && currentTabWrapper) {
     // Calculate how far we've dragged to the right
     const currentX = event.clientX;
     let dragDistance = currentX - tabStartX;
@@ -130,8 +129,8 @@ document.addEventListener('mousemove', function(event) {
         dragDistance = 150;
       }
       
-      // Move the tab to the right (use positive translateY to go the other way)
-      currentTab.style.transform = `rotate(-90deg) translateY(${dragDistance}px)`;
+      // Move the entire wrapper (label and tab together) to the right
+      currentTabWrapper.style.transform = `translateX(${dragDistance}px)`;
       
       // If dragged 120px or more, show the content
       if (dragDistance >= 120) {
@@ -153,18 +152,18 @@ document.addEventListener('mousemove', function(event) {
   }
 });
 
-// When mouse is released, snap tab back but keep content visible
+// When mouse is released, snap tab wrapper back but keep content visible
 document.addEventListener('mouseup', function() {
-  if (isDraggingTab && currentTab) {
-    // Reset the tab position
-    currentTab.style.transform = 'rotate(-90deg) translateY(0)';
-    currentTab.style.cursor = 'grab';
+  if (isDraggingTab && currentTabWrapper) {
+    // Reset the wrapper position
+    currentTabWrapper.style.transform = 'translateX(0)';
+    currentTabWrapper.style.cursor = 'grab';
     
     // Don't hide the content - it stays visible until another tab is pulled
     
     // Stop dragging
     isDraggingTab = false;
-    currentTab = null;
+    currentTabWrapper = null;
     currentSection = null;
   }
 });
