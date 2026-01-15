@@ -10,7 +10,7 @@ html {
 
 body {
   /* Code editor theme */
-  font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+  font-family: "Consolas", "Monaco", "Courier New", monospace;
   line-height: 1.6;
   /* reset default margins */
   padding: 0;
@@ -30,18 +30,20 @@ h2 {
   text-shadow: 0 0 10px rgba(78, 201, 176, 0.3);
 }
 
-h3, h4 {
+h3,
+h4 {
   display: none;
   color: #ce9178; /* Orange accent */
 }
 
-ul, li {
+ul,
+li {
   display: none;
 }
 
 p {
   margin-top: 0;
-  font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+  font-family: "Consolas", "Monaco", "Courier New", monospace;
   font-weight: 400;
   font-style: normal;
   display: none;
@@ -69,7 +71,7 @@ main {
   padding: 10px 15px;
   font-size: 14px;
   cursor: pointer;
-  font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+  font-family: "Consolas", "Monaco", "Courier New", monospace;
   transition: all 0.3s ease;
   box-shadow: 0 0 10px rgba(86, 156, 214, 0.3);
 }
@@ -80,8 +82,7 @@ main {
   box-shadow: 0 0 20px rgba(78, 201, 176, 0.5);
 }
 
-/* This CSS was modified with help from Github Copilot 
-in response to the prompt "move the text physically on top of the tab image" - 1/13/26 */
+/* This CSS was modified with help from Github Copilot in response to the prompt "can you make it 60px width but make sure all of the tabs are displayed and none are hidden / overflowed" - 1/15/26 */
 
 .tabs-container {
   display: flex;
@@ -92,8 +93,8 @@ in response to the prompt "move the text physically on top of the tab image" - 1
   left: 0;
   top: 0;
   height: 100vh;
-  width: 80px;
-  padding: 20px 10px;
+  width: 85px;
+  padding: 15px 8px;
   background: linear-gradient(180deg, #2d2d30 0%, #1e1e1e 50%, #2d2d30 100%);
   border-right: 2px solid #569cd6;
   box-sizing: border-box;
@@ -119,7 +120,7 @@ in response to the prompt "move the text physically on top of the tab image" - 1
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+  font-family: "Consolas", "Monaco", "Courier New", monospace;
   font-size: 9px;
   color: #4ec9b0;
   font-weight: bold;
@@ -132,7 +133,7 @@ in response to the prompt "move the text physically on top of the tab image" - 1
 }
 
 .tab {
-  width: 55px;
+  width: 60px;
   height: auto;
   transform: rotate(-90deg);
   user-select: none;
@@ -145,7 +146,7 @@ in response to the prompt "take the links from the projects and display the proj
   position: fixed;
   right: 0;
   top: 0;
-  width: 60%;
+  width: 82%;
   height: 100vh;
   background: linear-gradient(135deg, #1e1e1e 0%, #252526 50%, #1e1e1e 100%);
   border-left: 2px solid #569cd6;
@@ -171,6 +172,18 @@ in response to the prompt "take the links from the projects and display the proj
   gap: 20px;
   width: 100%;
   margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+/* This CSS was modified with help from Github Copilot in response to the prompt "can you add an iframe into each of the sections with its respective project so the user can try the project and look at the code, add the project into the blank space on the left side of the code" - 1/15/26 */
+.content-display section > p {
+  flex: 0 0 100%;
+  order: -1;
+}
+
+.content-display section > h2 {
+  flex: 0 0 100%;
+  order: -2;
 }
 
 .project-preview {
@@ -239,7 +252,7 @@ in response to the prompt "take the links from the projects and display the proj
 
 .content-display p {
   display: block !important;
-  font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+  font-family: "Consolas", "Monaco", "Courier New", monospace;
   line-height: 1.8;
   font-size: 16px;
   color: #d4d4d4;
@@ -259,12 +272,38 @@ in response to the prompt "take the links from the projects and display the proj
   text-shadow: 0 0 10px rgba(86, 156, 214, 0.5);
 }
 
+/* This CSS was modified with help from Github Copilot in response to the prompt "can you make the iframes only display when the user pulls the respective tab and make them bigger so the user can actually use them" - 1/15/26 */
+.project-iframe-container {
+  flex: 0 0 50%;
+  min-height: 700px;
+  background: #000;
+  border: 2px solid #569cd6;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(86, 156, 214, 0.3);
+  display: none !important;
+}
+
+.content-display .project-iframe-container {
+  display: block !important;
+}
+
+.project-iframe-container iframe {
+  width: 100%;
+  height: 100%;
+  min-height: 700px;
+  border: none;
+  display: block;
+  background: #fff;
+}
+
 .code-viewer {
   margin: 20px 0;
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
   display: none !important;
+  flex: 1;
 }
 
 .content-display .code-viewer {
@@ -283,7 +322,7 @@ in response to the prompt "take the links from the projects and display the proj
   background: #2d2d30;
   border: 1px solid #569cd6;
   cursor: pointer;
-  font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+  font-family: "Consolas", "Monaco", "Courier New", monospace;
   font-size: 14px;
   border-radius: 4px 4px 0 0;
   transition: all 0.3s ease;
@@ -316,7 +355,7 @@ in response to the prompt "take the links from the projects and display the proj
 .code-block {
   display: none;
   margin: 0;
-  font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+  font-family: "Consolas", "Monaco", "Courier New", monospace;
   font-size: 14px;
   white-space: pre-wrap;
   word-wrap: break-word;
